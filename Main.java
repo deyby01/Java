@@ -1,34 +1,93 @@
+package TemaNueve;
+/*
+Crea una clase Persona con las siguientes variables:
+La edad
+El nombre
+El teléfono
+Una vez creada la clase, crea una nueva clase Cliente que herede de Persona, esta nueva clase tendrá la
+variable credito solo para esa clase.
+Crea ahora un objeto de la clase Cliente que debe tener como propiedades la edad, el telefono, el nombre y
+el credito, tienes que darles valor y mostrarlas por pantalla.
+Una vez hecho esto, haz lo mismo con la clase Trabajador que herede de Persona, y con una variable salario
+que solo tenga la clase Trabajador.
+*/
+
 public class Main {
     public static void main(String[] args) {
-        int n1 = 15;
-        int n2 = 17;
-        int n3 = 9;
-        var valor = suma(n1, n2, n3);
-        System.out.println(valor);
-        Coche miCoche = new Coche();
-        var total = miCoche.IncrementoPuertas(2);
-        System.out.println(total);
-    }
+        Cliente cliente = new Cliente();
+        cliente.setNombre("David");
+        cliente.setEdad(22);
+        cliente.setTelefono(11223344);
+        cliente.setCredito(20000);
+        System.out.println(cliente.getNombre());
+        System.out.println(cliente.getEdad());
+        System.out.println(cliente.getTelefono());
+        System.out.println(cliente.getCredito());
 
-    public static int suma(int a, int b, int c){
-        return a + b + c;
+        System.out.println();
+
+        Trabajador trabajador = new Trabajador();
+        trabajador.setNombre("David");
+        trabajador.setEdad(22);
+        trabajador.setTelefono(11223344);
+        trabajador.setSalario(60000);
+        System.out.println(trabajador.getNombre());
+        System.out.println(trabajador.getEdad());
+        System.out.println(trabajador.getTelefono());
+        System.out.println(trabajador.getSalario());
     }
 }
 
-//Crear una clase coche.
-//
-//Dentro de la clase coche, una variable numérica que almacene el número de puertas que tiene.
-//
-//Una función que incremente el número de puertas que tiene el coche.
-//
-//Crear un objeto miCoche en el main y añadirle una puerta.
-//
-//Mostrar el número de puertas que tiene el objeto.
+class Persona {
+    String nombre;
+    int edad;
+    int telefono;
 
-class Coche{
-    public int puertas = 4;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-    public int IncrementoPuertas(int a){
-        return puertas + a;
+    public String getNombre(){
+        return this.nombre;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public int getEdad(){
+        return this.edad;
+    }
+
+    public void setTelefono(int telefono) {
+        this.telefono = telefono;
+    }
+
+    public int getTelefono() {
+        return this.telefono;
+    }
+
+}
+
+class Cliente extends Persona {
+    int credito;
+
+    public void setCredito(int credito) {
+        this.credito = credito;
+    }
+
+    public int getCredito() {
+        return this.credito;
+    }
+}
+
+class Trabajador extends Persona {
+    int salario;
+
+    public void setSalario(int salario) {
+        this.salario = salario;
+    }
+    public int getSalario() {
+        return this.salario;
     }
 }
