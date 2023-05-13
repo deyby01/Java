@@ -1,0 +1,9 @@
+
+5.- Indica cuál es el problema de utilizar un Vector con la capacidad por defecto si tuviésemos 1000 elementos para ser añadidos al mismo.
+
+El problema si usamos un Vector con la capacidad inicial por defecto y tenemos muchos datos como en este caso,
+que serian 1000 es que el Vector se va a duplicar las veces necesarias para cumplir con la capacidad solicitada,
+pero en este proceso va a crear multiples arrays por debajo, entonces al llegar a la capacidad va a tener muchos
+subarrays creados, los cuales van a ocupar mas la memoria y van a hacer que el programa o la aplicacion valla mucho
+mas lento y no de el rendimiento esperado, la mejor opcion es establecer un limite mas grande del solicitado en caso
+de que se requiera ingresar mas datos.
